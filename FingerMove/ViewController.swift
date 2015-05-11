@@ -4,6 +4,10 @@ class ViewController: UIViewController
 {
     @IBOutlet weak var toolBar: UIToolbar!
     
+    //記錄觸碰的起點與終點
+    var touchStartPosition:CGPoint!
+    var touchEndPosition:CGPoint!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -27,6 +31,13 @@ class ViewController: UIViewController
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
     {
         super.touchesBegan(touches, withEvent: event)
+        //記錄的觸碰點歸零
+        touchStartPosition = CGPointMake(0, 0)
+        touchEndPosition = CGPointMake(0, 0)
+        
+        println("\(touches.count)")
+//        if let touch = touches.count
+        
         println("觸碰開始")
     }
     //觸碰中移動
@@ -35,7 +46,6 @@ class ViewController: UIViewController
         super.touchesMoved(touches, withEvent: event)
         println("觸碰中移動")
     }
-    
     //觸碰結束
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent)
     {
