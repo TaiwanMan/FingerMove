@@ -21,7 +21,26 @@ class ViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    //MARK: Touch Events
+    //觸碰開始
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
+    {
+        super.touchesBegan(touches, withEvent: event)
+        println("觸碰開始")
+    }
+    //觸碰中移動
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent)
+    {
+        super.touchesMoved(touches, withEvent: event)
+        println("觸碰中移動")
+    }
+    
+    //觸碰結束
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent)
+    {
+        super.touchesEnded(touches, withEvent: event)
+        println("觸碰結束")
+    }
 }
 
